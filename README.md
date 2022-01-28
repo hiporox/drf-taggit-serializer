@@ -1,6 +1,6 @@
 # Django Taggit Rest Serializer
 
-[![Build Status](https://travis-ci.org/glemmaPaul/django-taggit-serializer.svg?branch=master)](https://travis-ci.org/glemmaPaul/django-taggit-serializer)
+[![Build Status](https://travis-ci.org/hiporox/drf-taggit-serializer.svg?branch=master)](https://travis-ci.org/hiporox/drf-taggit-serializer)
 
 ## About
 This package is meant for the `django-taggit` package which is available [here](https://github.com/alex/django-taggit)
@@ -10,7 +10,7 @@ The `django-taggit` package makes it possible to tag a certain module.
 ## Installation
 To install this package you can use the following `pip` installation:
 ```
-pip install django-taggit-serializer
+pip install drf-taggit-serializer
 ```
 
 Then, add `taggit_serializer` to your `Settings` in `INSTALLED_APPS`:
