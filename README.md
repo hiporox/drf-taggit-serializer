@@ -40,6 +40,23 @@ class YourSerializer(TaggitSerializer, serializers.ModelSerializer):
 
 And you're done, so now you can add tags to your model
 
+## Troubleshooting
+
+### Serializer is working but not persistent on DB
+Probably, yo've used the intheritance classes in the wrong order.
+The order on `YourSerializer` class inheritance classes is imporant, cause you have to override `to_internal_value` by django serializer mixins. So, use `TaggitSerializer` as the first class.
+
+```
+class YourSerializer(serializers.ModelSerializer, TaggitSerializer): # Using wrong to_internal_value function
+class YourSerializer(TaggitSerializer, serializers.ModelSerializer): # Replace with this
+```
+
 ## Contribute
 
 Please feel free to create pull requests and issues!
+Please try to follow [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to make it easier to track what changes you have made.
+
+
+## Credits
+
+This is a fork of https://github.com/glemmaPaul/django-taggit-serializer. Many thanks to [@glemmaPaul](https://github.com/glemmaPaul) for managing that repo.
