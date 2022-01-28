@@ -3,7 +3,7 @@ import json
 
 # Third party
 import six
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 
 
@@ -40,7 +40,6 @@ class TagListSerializerField(serializers.Field):
                           ' form must be valid json.'),
         'not_a_str': _('All list items must be of string type.')
     }
-    order_by = None
 
     def __init__(self, **kwargs):
         pretty_print = kwargs.pop("pretty_print", True)
@@ -105,7 +104,7 @@ class TaggitSerializer(serializers.Serializer):
     def _save_tags(self, tag_object, tags):
         for key in tags.keys():
             tag_values = tags.get(key)
-            getattr(tag_object, key).set(*tag_values)
+            getattr(tag_object, key).set(tag_values)
 
         return tag_object
 
